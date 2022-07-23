@@ -1,0 +1,24 @@
+  .clients__list {
+    @extend %list;
+    @include centeredFlex();
+  }
+
+  .clients__item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  .clients__link {
+    @include centeredFlex();
+    width: 170px;
+    height: 92px;
+    fill: #afb1b8;
+    border: 1px solid #afb1b8;
+    border-radius: 4px;
+    transition: fill 250ms $timingFunction, border 250ms $timingFunction;
+
+    &:hover,
+    &:focus {
+      fill: $linksAccentTextColor;
+      border: 1px solid $linksAccentTextColor;
+    }
+  }

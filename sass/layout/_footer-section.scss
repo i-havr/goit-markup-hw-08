@@ -1,0 +1,8 @@
+.footer {
+  padding: 60px 0;
+  background-color: $otherBackground;
+}
+
+.footer__container {
+  @include centeredFlex($items: baseline);
+}

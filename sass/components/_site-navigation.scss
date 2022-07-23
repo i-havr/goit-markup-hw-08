@@ -1,0 +1,48 @@
+.site-nav {
+  @include centeredFlex();
+}
+
+.site-nav__list {
+  @extend %list;
+  @include centeredFlex();
+  margin-left: 93px;
+}
+
+.site-nav__item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.site-nav__link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: $primaryTextColor;
+  transition: color 250ms $timingFunction;
+
+  &:hover,
+  &:focus {
+    color: $linksAccentTextColor;
+  }
+
+  &--current {
+    position: relative;
+    color: $linksAccentTextColor;
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      display: block;
+      border-radius: 2px;
+      background-color: $accentBackground;
+      transform: translateY(1px);
+    }
+  }
+}

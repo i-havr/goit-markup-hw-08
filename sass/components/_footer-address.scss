@@ -1,0 +1,29 @@
+.address__list {
+  @extend %list;
+}
+
+.address__item {
+  width: 231px;
+
+  &:not(:last-child) {
+    margin-bottom: 9px;
+  }
+}
+
+.address__link {
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms $timingFunction;
+
+  &:hover,
+  &:focus {
+    color: $linksAccentTextColor;
+  }
+}
+
+.address__map {
+  color: $whiteTextColor;
+}

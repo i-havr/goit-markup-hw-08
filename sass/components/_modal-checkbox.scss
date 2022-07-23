@@ -1,0 +1,66 @@
+.form-modal__checkbox {
+  margin: 0px auto 30px auto;
+}
+
+.checkbox {
+  position: relative;
+  display: block;
+  padding-left: 37px;
+
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: $secondaryTextColor;
+}
+
+.checkbox__terms {
+  color: $linksAccentTextColor;
+  text-decoration-line: underline;
+  text-decoration-skip-ink: none;
+}
+
+.checkbox__input {
+  /* appearance: none; */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.checkbox__item {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 13px;
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid #000000;
+  border-radius: 2px;
+  opacity: 1;
+  transition: opacity 250ms $timingFunction;
+
+  .checkbox__input:checked ~ & {
+    opacity: 0;
+  }
+}
+
+.checkbox__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 13px;
+  display: inline-block;
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 250ms $timingFunction,
+    background-color 250ms $timingFunction;
+
+  .checkbox__input:checked ~ & {
+    background-color: $accentBackground;
+    opacity: 1;
+  }
+}

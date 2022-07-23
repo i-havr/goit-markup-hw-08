@@ -1,0 +1,37 @@
+.footer__subscribe {
+  margin-left: 93px;
+}
+
+.form {
+  @include centeredFlex($items: stretch);
+  flex-direction: column;
+}
+
+.form__label {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $whiteTextColor;
+}
+
+.form__container {
+  @include centeredFlex();
+}
+
+.form__input {
+  @include centeredFlex();
+  width: 358px;
+  height: 50px;
+  padding-left: 16px;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: $whiteTextColor;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: inherit;
+}
