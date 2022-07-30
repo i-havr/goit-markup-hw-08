@@ -4,5 +4,11 @@
 }
 
 .footer__container {
-  @include centeredFlex($items: baseline);
+  @include centeredFlex();
+  flex-direction: column;
+
+  @media screen and (min-width: 1200px) {
+    @include centeredFlex($items: baseline);
+    flex-direction: row;
+  }
 }

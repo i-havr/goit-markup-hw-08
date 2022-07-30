@@ -1,36 +1,72 @@
 .site-nav {
-  @include centeredFlex();
+  @include centeredFlex($content: flex-start);
+
+  @media screen and (min-width: 768px) {
+    @include centeredFlex();
+    height: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
 }
 
 .site-nav__list {
   @extend %list;
-  @include centeredFlex();
-  margin-left: 93px;
+  @include centeredFlex($items: flex-start);
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+  }
 }
 
-.site-nav__item:not(:last-child) {
-  margin-right: 50px;
+.site-nav__item {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+      margin-right: 50px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    height: 100%;
+  }
 }
 
 .site-nav__link {
   display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
+
   font-weight: 500;
-  line-height: 1.2;
+  font-size: 40px;
+  line-height: 1.18;
+  text-align: center;
   letter-spacing: 0.02em;
   text-decoration: none;
   color: $primaryTextColor;
   transition: color 250ms $timingFunction;
 
+  @media screen and (min-width: 768px) {
+    height: 100%;
+    padding: 32px 0;
+    font-size: 14px;
+    line-height: 1.14;
+  }
+
   &:hover,
   &:focus {
     color: $linksAccentTextColor;
   }
+}
 
-  &--current {
+.site-nav__link--current {
+  color: $linksAccentTextColor;
+
+  @media screen and (min-width: 768px) {
     position: relative;
-    color: $linksAccentTextColor;
 
     &::after {
       position: absolute;

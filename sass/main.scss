@@ -3,6 +3,7 @@
 @import "./utils/placeholders";
 @import "./utils/mixins";
 @import "./utils/hidden";
+@import "./utils/breakpoints";
 @import "./base/common";
 @import "./base/reset";
 
@@ -17,10 +18,11 @@
 @import "./components/modal-window";
 @import "./components/modal-form";
 @import "./components/modal-checkbox";
-@import "./components/footer-address";
-@import "./components/footer-socials";
+@import "./components/footer-contacts-socials";
 @import "./components/footer-subscribe-form";
 @import "./components/portfolio-filter";
+@import "./components/mobile-menu";
+@import "./components/mobile-menu-socials";
 
 // LAYOUTS
 @import "./layout/header-section";

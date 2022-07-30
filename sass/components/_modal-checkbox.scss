@@ -5,11 +5,17 @@
 .checkbox {
   position: relative;
   display: block;
-  padding-left: 37px;
-
-  line-height: 1.71;
+  padding-left: 24px;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: $secondaryTextColor;
+
+  @media screen and (min-width: 1200px) {
+    padding-left: 35px;
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .checkbox__terms {
@@ -34,7 +40,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 13px;
+  left: 0px;
   display: inline-block;
   width: 16px;
   height: 15px;
@@ -46,21 +52,29 @@
   .checkbox__input:checked ~ & {
     opacity: 0;
   }
+
+  @media screen and (min-width: 1200px) {
+    left: 11px;
+  }
 }
 
 .checkbox__icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 13px;
+  left: 0px;
   display: inline-block;
   border-radius: 2px;
   opacity: 0;
   transition: opacity 250ms $timingFunction,
     background-color 250ms $timingFunction;
 
-  .checkbox__input:checked ~ & {
-    background-color: $accentBackground;
-    opacity: 1;
+  @media screen and (min-width: 1200px) {
+    left: 11px;
   }
+}
+
+.checkbox__input:checked ~ .checkbox__icon {
+  background-color: $accentBackground;
+  opacity: 1;
 }

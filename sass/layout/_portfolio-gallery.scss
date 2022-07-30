@@ -1,32 +1,45 @@
 .portfolio {
   @extend %list;
-  @include centeredFlex();
-  flex-wrap: wrap;
-}
+  display: block;
 
-.portfolio__card {
-  margin-right: 30px;
-  margin-bottom: 30px;
-}
-
-.card {
-  width: calc((100% - 60px) / 3);
-  &:nth-child(3n) {
-    margin-right: 0;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
   }
+}
 
-  &:nth-last-child(-1n + 3) {
+.portfolio__card:not(:last-child) {
+  margin-bottom: 30px;
+  @media screen and (min-width: 768px) {
     margin-bottom: 0;
   }
 }
 
+.portfolio .portfolio__card {
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 2 * 30px) / 2);
+    margin: 15px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 3 * 30px) / 3);
+  }
+}
+
 .card__link {
+  height: 100%;
   text-decoration: none;
   transition: filter 250ms $timingFunction;
 
   &:hover,
   &:focus {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -37,6 +50,8 @@
 
 .card__img {
   display: block;
+  width: 100%;
+  object-fit: cover;
 }
 
 .card__text {
@@ -78,7 +93,20 @@
   border-top-width: 0px;
 }
 
+.card__meta:nth-child(-n + 2) {
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    flex-grow: 1;
+  }
+}
+
+// .portfolio__card:first-child .card__meta {
+//   @media screen and (min-width: 768px) and (max-width: 1199px) {
+//     padding: 20px 24px 56px 24px;
+//   }
+// }
+
 .card__title {
+  width: 100%;
   margin-bottom: 4px;
   font-weight: 700;
   font-size: 18px;

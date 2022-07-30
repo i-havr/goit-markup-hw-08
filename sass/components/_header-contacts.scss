@@ -1,23 +1,85 @@
-.contacts__list {
-  @extend %list;
-  @include centeredFlex();
-  margin-left: auto;
+.contacts {
+  margin-bottom: 64px;
+
+  @media screen and (min-width: 768px) {
+    height: 100%;
+    margin-bottom: 0;
+    // margin-left: auto;
+  }
 }
 
-.contacts__item:not(:last-child) {
-  margin-right: 50px;
+.contacts__list {
+  @extend %list;
+  @include centeredFlex($items: flex-start);
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    height: 100%;
+    flex-direction: column-reverse;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: row-reverse;
+  }
+}
+
+.contacts__item {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.contacts__item:first-child {
+  margin-bottom: 32px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
+}
+
+.contacts__item:last-child {
+  @media screen and (min-width: 768px) {
+    margin-bottom: 10px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 0px;
+    margin-right: 30px;
+  }
 }
 
 .contacts__link {
-  @include centeredFlex();
-  padding-top: 32px;
-  padding-bottom: 32px;
   font-weight: 500;
-  line-height: 1.2;
   letter-spacing: 0.02em;
   text-decoration: none;
-  color: $secondaryTextColor;
+  font-size: 34px;
+  line-height: 1.18;
+  color: $linksAccentTextColor;
   transition: color 250ms $timingFunction;
+
+  .contacts__item:last-child & {
+    @media screen and (max-width: 767px) {
+      font-size: 24px;
+      line-height: 1.17;
+      color: $secondaryTextColor;
+    }
+  }
+
+  & {
+    @media screen and (min-width: 768px) {
+      font-size: 12px;
+      line-height: 1.17;
+      color: $secondaryTextColor;
+      display: inline-flex;
+      align-items: center;
+
+      @media screen and (min-width: 1200px) {
+        font-size: 14px;
+        line-height: 1.14;
+      }
+    }
+  }
 
   &:hover,
   &:focus {
@@ -26,6 +88,35 @@
 }
 
 .contacts__icon {
-  fill: currentColor;
-  margin-right: 10px;
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: inline-flex;
+    margin-right: 8px;
+    fill: currentColor;
+  }
+}
+
+.contacts__item:first-child .contacts__icon {
+  @media screen and (min-width: 768px) {
+    width: 10px;
+    height: 14px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 10px;
+    height: 16px;
+  }
+}
+
+.contacts__item:last-child .contacts__icon {
+  @media screen and (min-width: 768px) {
+    width: 14px;
+    height: 10px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 16px;
+    height: 12px;
+  }
 }

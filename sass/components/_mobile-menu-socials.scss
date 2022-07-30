@@ -1,0 +1,37 @@
+.mobile-menu-socials {
+  display: block;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.mobile-menu-socials__list {
+  @extend %list;
+  @include centeredFlex($content: flex-start);
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.mobile-menu-socials__item {
+  @include centeredFlex($content: flex-start);
+  height: 100%;
+}
+
+.mobile-menu-socials__link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: $linksAccentTextColor;
+}
+
+.mobile-menu-socials__line {
+  display: inline-block;
+  width: 1px;
+  min-height: 22px;
+  margin: 0 10px;
+  background-color: rgba(33, 33, 33, 0.2);
+  //   transform: rotate(90deg);
+}

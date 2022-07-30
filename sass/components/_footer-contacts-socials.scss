@@ -1,0 +1,121 @@
+.footer__contacts-socials {
+  @include centeredFlex();
+  flex-direction: column;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    @include centeredFlex($content: space-between, $items: baseline);
+    flex-direction: row;
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 0;
+  }
+}
+
+.footer__contacts {
+  margin-bottom: 60px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 61px;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-left: 0;
+  }
+}
+
+.address__list {
+  @extend %list;
+  text-align: center;
+  width: 232px;
+
+  @media screen and (min-width: 1200px) {
+    text-align: start;
+    width: 231px;
+  }
+}
+
+.address__item {
+  width: 100%;
+}
+
+.address__item:not(:last-child) {
+  margin-bottom: 8px;
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 9px;
+  }
+}
+
+.address__link {
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms $timingFunction;
+
+  &:hover,
+  &:focus {
+    color: $linksAccentTextColor;
+  }
+}
+
+.address__map {
+  color: $whiteTextColor;
+}
+
+.footer__socials {
+  margin-bottom: 60px;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 74px;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-left: 70px;
+    margin-right: 0;
+  }
+}
+
+.socials__appeal {
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-align: center;
+  color: $whiteTextColor;
+
+  @media screen and (min-width: 1200px) {
+    text-align: start;
+  }
+}
+
+.socials__list {
+  @extend %list;
+  @include centeredFlex();
+}
+
+.socials__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.socials__link {
+  @include centeredFlex();
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  fill: $whiteTextColor;
+  transition: background-color 250ms $timingFunction;
+
+  &:hover,
+  &:focus {
+    background-color: $accentBackground;
+  }
+}

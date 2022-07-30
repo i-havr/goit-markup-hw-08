@@ -1,7 +1,20 @@
 .header {
+  position: relative;
   border-bottom: 1px solid #ececec;
 }
 
 .header__container {
-  @include centeredFlex();
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 80px;
+  }
 }

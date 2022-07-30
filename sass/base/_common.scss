@@ -16,3 +16,7 @@ body {
   background-color: #ffffff;
   font-family: "Roboto", sans-serif;
 }
+
+body.modal-open {
+  overflow: hidden;
+}
